@@ -20,7 +20,7 @@ app.use(function(req, res, next) {
 app.get('/api/jira', (req, res) => {
 	try {
 		axios
-			.get(`https://issues.liferay.com/rest/api/${req.query.query}`, {
+			.get(`https://issues.liferay.com/rest/${req.query.query}`, {
 				headers: { Authorization: `Basic ${credential}` },
 			})
 			.then(({ data }) => res.json(data))
